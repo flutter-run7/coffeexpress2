@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: coffeexpress-backend
+    env: node
+    plan: free
+    buildCommand: 'npm install'
+    startCommand: 'node server.js'
+    envVars:
+      - key: MONGO_URI
+        value: mongodb+srv://matheusprogramacao7:ILgZaHlJrvvzsQua@nuvemcluster.hyayc.mongodb.net/coffeexpress?retryWrites=true&w=majority&appName=NuvemCluster
+      - key: EMAIL_USER
+        value: matheusdev.senai@gmail.com
+      - key: EMAIL_PASS
+        value: Teixeiramma2025$
