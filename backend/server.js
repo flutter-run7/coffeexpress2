@@ -94,7 +94,7 @@ module.exports = { Product };
 
 
 
-//matheusprogramacao7        password: ILgZaHlJrvvzsQua (7m9QenpXitNI8qem)    (Atlas MONGODB)
+//matheusprogramacao7        password: ZILvM1f34MTZ846V   (Atlas MONGODB)
 
 
 // mongosh "mongodb+srv://nuvemcluster.hyayc.mongodb.net/" --apiVersion 1 --username matheusprogramacao7 --password ILgZaHlJrvvzsQua
