@@ -13,7 +13,7 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-// Configurar o Nodemailer
+// Configuração do Nodemailer
 const transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
@@ -22,6 +22,7 @@ const transporter = nodemailer.createTransport({
   }
 });
 
+// Rota para enviar email de contato
 app.post("/api/contact", (req, res) => {
   const { name, email, message } = req.body;
 
@@ -35,10 +36,10 @@ app.post("/api/contact", (req, res) => {
   transporter.sendMail(mailOptions, (error, info) => {
     if (error) {
       console.error("Erro ao enviar email:", error);
-      res.status(500).json({ error: "Erro ao enviar email" });
+      return res.status(500).json({ error: "Erro ao enviar email" });
     } else {
       console.log("Email enviado:", info.response);
-      res.status(200).json({ message: "Mensagem enviada com sucesso!" });
+      return res.status(200).json({ message: "Mensagem enviada com sucesso!" });
     }
   });
 });
@@ -91,6 +92,7 @@ const PORT = process.env.PORT || 5001;
 app.listen(PORT, () => console.log(`🚀 Servidor rodando na porta ${PORT}`));
 
 module.exports = { Product };
+
 
 
 
