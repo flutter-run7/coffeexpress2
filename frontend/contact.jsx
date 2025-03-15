@@ -13,7 +13,8 @@ const Contact = () => {
     setStatus("Enviando...");
 
     try {
-      const response = await fetch("http://seu-backend.com/api/contact", {
+      // Alterado para a URL do seu backend hospedado
+      const response = await fetch("https://coffeexpress2.onrender.com/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
